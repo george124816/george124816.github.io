@@ -1,0 +1,23 @@
+* consuming a topic<BR>
+
+kcat -C -b localhost:9092 -t topic_name -p partition
+
+<BR>* publishing a message<BR>
+
+kcat -C -b localhost:9092 -t topic_name -p partition
+
+<BR>* describing a event consumer<BR>
+
+kafka-consumer-groups.sh --bootstrap-server localhost:9092 --group consumer_group_name --describe
+
+<BR>* plan skip offset<BR>
+
+kafka-consumer-groups.sh --bootstrap-server localhost:9092 --group consumer_group_name --topic topic_0 --reset-offsets --shift-by 1
+
+<BR>* execute skip offset<BR>
+
+kafka-consumer-groups.sh --bootstrap-server localhost:9092 --group consumer_group_name --topic topic_0 --reset-offsets --shift-by 1 --execute
+
+<BR>* run kafka-ui<BR>
+
+docker run -p 8080:8080 -e KAFKA_BROKERS=localhost:9092,192.168.0.1:9092 quay.io/cloudhut/kowl:master
