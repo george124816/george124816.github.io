@@ -8,7 +8,7 @@ kcat -C -b localhost:9092 -t topic_name -p partition
 
 <BR>* publishing a message<BR>
 
-kcat -C -b localhost:9092 -t topic_name -p partition
+echo '{"key": "value"}' | jq -c | kcat -P -b localhost:9092 -t topic_name
 
 <BR>* describing a event consumer<BR>
 
