@@ -1,14 +1,17 @@
 * creating a topic<BR>
 
-kafka-topics.sh --bootstrap-server localhost:9092 --create --topic george --partitions 1 --replication-factor 1
-
-<BR>* consuming a topic<BR>
-
-kcat -C -b localhost:9092 -t topic_name -p partition
+kafka-topics.sh --bootstrap-server localhost:9092 --create --topic firstTopic --partitions 1
 
 <BR>* publishing a message<BR>
 
-echo '{"key": "value"}' | jq -c | kcat -P -b localhost:9092 -t topic_name
+# using echo and jq to compact the message
+echo '{"name": "hello world"}' | jq -c | kafka-console-producer.sh --bootstrap-server localhost:9092 --topic firstTopic
+# from a file
+kafka-console-producer.sh --bootstrap-server localhost:9092 --topic firstTopic < message.json
+
+<BR>* consuming a topic<BR>
+
+kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic firstTopic --from-beginning
 
 <BR>* describing a event consumer<BR>
 
@@ -26,4 +29,4 @@ kafka-consumer-groups.sh --bootstrap-server localhost:9092 --group consumer_grou
 
 docker run -p 8080:8080 -e KAFKA_BROKERS=localhost:9092,192.168.0.1:9092 quay.io/cloudhut/kowl:master
 
-all commands are tested on kafka 2.8.2 with scala 2.12
+all commands are tested on kafka 3.9.0
