@@ -1,30 +1,10 @@
 baseURL: https://georgerodrigues.dev/
 languageCode: en-us
 title: George Rodrigues
-theme: ["PaperMod"]
+theme: ["hyde"]
 hideFooter: true
 caches:
   images:
     dir: :cacheDir/images
 params:
-  profileMode:
-    enabled: true
-    title: "<Title>" # optional default will be site title
-    subtitle: "Software Engineer Backend"
-    imageUrl: "https://media.licdn.com/dms/image/v2/D4D03AQHs6yAakDv_Pw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1701715182166?e=1762387200&v=beta&t=dIOOeDkFUUGe-GX0aPyyGKb279BLG3P68ZrW0HW5Uck"
-    imageTitle: "<title of image as alt>" # optional
-    imageWidth: 120 # custom size
-    imageHeight: 120 # custom size
-    buttons:
-      - name: About Me
-        url: "/about"
-      - name: Guides
-        url: "/guides"
-      - name: Posts
-        url: "/posts"
-
-  socialIcons: # optional
-    - name: "github"
-      url: "https://github.com/george124816/"
-    - name: "linkedin"
-      url: "https://www.linkedin.com/in/george124816/"
+  description: "software engineer"
