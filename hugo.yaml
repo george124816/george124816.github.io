@@ -8,3 +8,11 @@ caches:
     dir: :cacheDir/images
 params:
   description: "software engineer"
+  themeColor: "theme-base-00"
+menus:
+  main:
+    - name: Github
+      url: https://github.com/george124816
+    - name: LinkedIn
+      url: https://www.linkedin.com/in/george124816/
+
