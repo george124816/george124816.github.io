@@ -50,7 +50,7 @@ and how to use this easily? I send to my github and with a few commands I can in
 
 ```sh
 go install github.com/george124816/fileserver@latest
-fileserver
+PORT=8000 DIR=/tmp/ fileserver
 ```
 
 refs: https://github.com/george124816/fileserver
